@@ -1,0 +1,15 @@
+fastapi==0.108.0  # Updated for Python 3.12 compatibility
+uvicorn==0.27.0  # Updated for Python 3.12 compatibility
+sqlalchemy==2.0.25  # Updated for better Python 3.12 support
+alembic==1.13.0  # Updated for compatibility with SQLAlchemy 2.0
+pydantic==2.6.0  # Updated major version for Python 3.12 support
+email-validator==2.1.0  # Required for EmailStr validation in Pydantic
+python-dotenv==1.0.0
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.9  # Updated to resolve dependency conflict with gradio
+requests==2.31.0  # Security updates
+boto3==1.34.0  # Updated for better compatibility
+pillow==10.2.0  # Compatible with Python 3.12
+mysql-connector-python==9.2.0  # MySQL driver (Pure Python implementation)
+facebook-sdk==3.1.0  # Facebook integration
