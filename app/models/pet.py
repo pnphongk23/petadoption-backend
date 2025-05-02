@@ -21,6 +21,9 @@ class Pet(Base):
     # Foreign key to user (owner/uploader)
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     
+    # Relationships
+    health_records = relationship("HealthRecord", back_populates="pet")
+    
     # Timestamps
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())

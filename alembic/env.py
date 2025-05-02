@@ -21,8 +21,9 @@ import os
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from app.db.session import Base
-from app.models import user, otp  # Import all your models here
+# Import base and all models
+from app.db.base import Base
+# This imports all models already
 
 target_metadata = Base.metadata
 

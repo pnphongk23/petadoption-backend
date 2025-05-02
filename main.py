@@ -1,6 +1,11 @@
+import os
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from pathlib import Path
+
+from app.config import settings
 
 app = FastAPI(
     title="Hanoi Pet Adoption API",
@@ -16,6 +21,12 @@ app.add_middleware(
     allow_methods=["*"],  # Allows all methods
     allow_headers=["*"],  # Allows all headers
 )
+
+# Create media directory if it doesn't exist
+os.makedirs(settings.MEDIA_ROOT, exist_ok=True)
+
+# Mount media directory to serve files
+app.mount("/media", StaticFiles(directory=settings.MEDIA_ROOT), name="media")
 
 # Import and include routers
 from app.api import api_router
